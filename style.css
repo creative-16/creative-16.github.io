@@ -1,0 +1,140 @@
+ *{
+  box-sizing: border-box;
+ }
+
+ .column{
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+ }
+
+ .row::after{
+  content: "";
+  display: table;
+  clear: both;
+ }
+
+
+
+ .left{
+      display: block;
+      width: 128px;
+    }
+    .right{
+      display: block;
+    }
+    .center{
+      display: block;
+    }
+    .size{
+      display: block;
+      
+    }
+    .jy
+    {
+      width: 128px;
+      height:128px;
+      object-fit: fill; 
+      align-content: initial;      
+    }
+    .logo{
+      width: 400px;
+      height: 150px;
+      object-fit: fill; 
+      margin-left: 50px;   
+  
+      }
+      .inw{
+         width: 128px;
+      height: 128px;
+      object-fit: fill;   
+      margin-left: 300px;   
+     
+      }
+
+    .pftr{
+      width: 500px;
+      height: 30px;
+      object-fit: fill;
+      display: block;
+
+    } 
+    
+    .countdown{
+  --number-color: hsl(0 0% 100%);
+  --text-color: hsl(0 0% 25%);
+  --dot-color: hsl(0 0% 10%);
+  --dot-color-remaining: hsl(182, 100%, 66%);
+  --dot-color-active: hsl(0 100% 50%);
+  font-family: system-ui, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: min(60rem, 60%);
+  margin-inline: auto;
+  container: inline-size;
+  > .part {
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    > .remaining {
+      grid-area: 1/1;
+      color: hsl(0 0% 100%);
+      display: grid;
+      text-align: center;
+      font-size: 4cqi;
+      >.number {
+        color: #47AEE3;
+      }
+      >.text {
+        color:#90BB40;
+        text-transform: uppercase;
+        font-size: 0.5em;
+      }
+    }
+    > .dot-container {
+      grid-area: 1/1;
+      height: 100%;
+      width: 4%;
+      rotate: calc(360deg / var(--dots) * var(--dot-idx));
+      > .dot {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background-color: var(--dot-color);
+        border-radius: 50%;
+        transition: background-color .25s;
+        &[data-active=true]{
+          background-color: #E32238;
+          &[data-lastactive=true]{
+            background-color: #90BB40;
+          }
+        }
+      }
+    }
+  }
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: hsl(0 0% 0%);
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+}
+h1 {
+  font-family: system-ui, sans-serif;
+  color: hsl(0 0% 100%);
+  text-align: center;
+  >span:nth-last-child(3){
+    color: #E32238;
+  }
+  >span:nth-last-child(2){
+    color: #47AEE3;
+  }
+  >span:nth-last-child(1){
+    color: #FDB514;
+  }
+}
